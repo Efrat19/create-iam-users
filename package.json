@@ -12,5 +12,8 @@
   "dependencies": {
     "puppeteer": "^2.0.0",
     "underscore": "^1.9.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4"
   }
 }
