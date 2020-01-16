@@ -19,5 +19,6 @@ module.exports = function(grunt) {
         regExp: false
       }
     },
-  })
+  });
+  grunt.task.registerTask('bump', 'bump')
 }

@@ -31,16 +31,17 @@ const createUser = async (page) => {
     await page.waitFor(2000);
     // await page.click('#awsui-checkbox-54');//disable password reset
     await page.click('.awsui-button-variant-primary[type=submit]');//next
-    await page.waitFor(2000);
-    await page.click('[text="developers"]');//developers group
+    await page.waitFor(4000);
+    // await page.screenshot({path: 'example.png'});
+    // await page.click('[text="developers"]');//developers group
     await page.click('.awsui-button-variant-primary[type=submit]');//next
     await page.waitFor(3000);
     await page.click('.awsui-button-variant-primary[type=submit]');//next
     await page.waitFor(3000);
     await page.click('.awsui-button-variant-primary[type=submit]');//next
     await page.waitFor(3000);
+    await page.screenshot({path: 'example2.png'});
     await page.click('span.download');//download creds
-    await page.screenshot({path: 'example.png'});
     
 }
 
@@ -49,7 +50,7 @@ const createUser = async (page) => {
         defaultViewport: {width: 1920, height: 1080}
     });
     const page = await browser.newPage();
-    await page._client.send('Page.setDownloadBehavior', {behavior: 'allow', downloadPath: '.'});
+    await page._client.send('Page.setDownloadBehavior', {behavior: 'allow', downloadPath: `./${user}`});
     await login(page);
     await page.waitFor(2000);
     await createUser(page);
